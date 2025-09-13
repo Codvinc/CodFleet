@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodFleet - From Tasks to Careers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #0D1B2A;
+        }
+
+        /* Custom SVG styling */
+        .illustration-svg path,
+        .illustration-svg line,
+        .illustration-svg circle,
+        .illustration-svg rect {
+            stroke: #FFFFFF;
+            stroke-width: 1.5px;
+            fill: none;
+            transition: stroke 0.3s ease-in-out;
+        }
+
+        .illustration-svg .accent-highlight {
+            stroke: #00C896;
+        }
+
+        /* Mobile menu animation */
+        .hamburger-menu-icon {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hamburger-menu-icon.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger-menu-icon.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu-icon.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .footer-disclaimer {
+            background-color: #0D1B2A;
+        }
+    </style>
+</head>
+
+<body class="bg-[#0D1B2A] text-white overflow-x-hidden">
+
+    <!-- Fixed Header -->
+    <header class="fixed top-0 left-0 w-full z-50 p-6">
+        <nav class="container mx-auto flex justify-between items-center">
+            <!-- Left: Logo & Tagline -->
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-xl font-bold">CodFleet</a>
+                <span class="text-xs text-[#7A7A7A] hidden lg:block">Designing Futures.</span>
+            </div>
+
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="menu-toggle" class="lg:hidden p-2 focus:outline-none">
+                <div id="hamburger-icon" class="flex flex-col space-y-1.5 hamburger-menu-icon">
+                    <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+                </div>
+            </button>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="#" class="hover:text-[#7A7A7A] transition-colors">Home</a>
+                <a href="#" class="hover:text-[#7A7A7A] transition-colors">The CodFleet Story</a>
+                <a href="#" class="hover:text-[#7A7A7A] transition-colors">Network</a>
+                <a href="#" class="hover:text-[#7A7A7A] transition-colors">Insights</a>
+                <a href="#" class="hover:text-[#7A7A7A] transition-colors">Let’s Talk</a>
+                <a href="#" class="hover:text-[#7A7A7A] transition-colors">Investors</a>
+                <a href="#" class="bg-[#00C896] text-[#0D1B2A] px-6 py-3 rounded-lg font-bold hover:bg-white transition-colors">Ready!</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="fixed top-0 left-0 h-full w-full bg-[#0D1B2A] transform -translate-x-full transition-transform duration-300 z-40 lg:hidden flex flex-col items-center justify-center space-y-8">
+        <a href="#" class="text-3xl hover:text-[#7A7A7A] transition-colors">Home</a>
+        <a href="#" class="text-3xl hover:text-[#7A7A7A] transition-colors">The CodFleet Story</a>
+        <a href="#" class="text-3xl hover:text-[#7A7A7A] transition-colors">Network</a>
+        <a href="#" class="text-3xl hover:text-[#7A7A7A] transition-colors">Insights</a>
+        <a href="#" class="text-3xl hover:text-[#7A7A7A] transition-colors">Let’s Talk</a>
+        <a href="#" class="text-3xl hover:text-[#7A7A7A] transition-colors">Investors</a>
+        <a href="#" class="bg-[#00C896] text-[#0D1B2A] text-3xl px-8 py-4 rounded-lg font-bold hover:bg-white transition-colors mt-8">Ready!</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="relative z-10">
+
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center justify-center p-8 bg-gradient-to-b from-[#0D1B2A] to-slate-950">
+            <div class="container mx-auto lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <!-- Text Content & CTAs -->
+                <div class="text-center lg:text-left lg:order-1 order-2 mt-16 lg:mt-0">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-4">
+                        CodFleet: From Tasks to Careers.
+                    </h1>
+                    <p class="text-lg sm:text-xl text-[#7A7A7A] mb-8 max-w-lg mx-auto lg:mx-0">
+                        Connecting companies with verified freelancers, building Finland’s workforce backbone.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 mb-4">
+                        <a href="#" class="bg-[#00C896] text-[#0D1B2A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-white transition-colors w-full sm:w-auto text-center">Join the Fleet</a>
+                        <a href="#" class="border border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#0D1B2A] transition-colors w-full sm:w-auto text-center">Accelerate Your Workforce</a>
+                        <a href="#" class="border border-[#00C896] text-[#00C896] px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#00C896] hover:text-[#0D1B2A] transition-colors w-full sm:w-auto text-center">Upskill the Fleet</a>
+                    </div>
+                </div>
+
+                <!-- Illustration -->
+                <div class="lg:order-2 order-1 flex justify-center items-center lg:mb-0 mb-12">
+                    <svg class="illustration-svg w-full max-w-sm h-auto lg:max-w-lg" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="100" y1="350" x2="100" y2="50" class="accent-highlight" />
+                        <line x1="400" y1="350" x2="400" y2="50" class="accent-highlight" />
+                        <path d="M 100 50 C 150 -50, 350 -50, 400 50" class="accent-highlight" />
+                        <line x1="0" y1="350" x2="500" y2="350" />
+                        <rect x="50" y="320" width="20" height="25" rx="3" />
+                        <path d="M 55 325 L 65 325" />
+                        <circle cx="60" cy="310" r="8" />
+                        <rect x="25" y="310" width="20" height="25" rx="3" />
+                        <path d="M 30 315 L 40 315" />
+                        <circle cx="35" cy="300" r="8" />
+                        <rect x="420" y="310" width="25" height="30" rx="4" />
+                        <circle cx="432.5" cy="300" r="10" />
+                        <path d="M 425 320 L 440 320" />
+                        <rect x="450" y="320" width="25" height="25" rx="4" />
+                        <path d="M 455 325 L 470 325" />
+                        <circle cx="462.5" cy="310" r="8" />
+                        <rect x="475" y="315" width="20" height="20" rx="3" />
+                        <path d="M 480 320 L 490 320" />
+                        <circle cx="485" cy="305" r="8" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Strip -->
+        <section class="py-12 bg-gray-900 bg-opacity-40 backdrop-blur-sm">
+            <div class="container mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center px-8">
+                <div class="flex flex-col items-center">
+                    <svg class="w-12 h-12 stroke-white mb-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12 17V22" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M22 7L12 12" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12 12L2 7" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span class="text-sm text-[#7A7A7A]">Compliance-First.</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <svg class="w-12 h-12 stroke-white mb-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 8H6C4.89543 8 4 8.89543 4 10V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V10C20 8.89543 19.1046 8 18 8Z" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12 16V10" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12 4V8" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M15 12V10" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M9 12V10" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span class="text-sm text-[#7A7A7A]">Escrow & Trust.</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <svg class="w-12 h-12 stroke-white mb-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2V22M7 17L12 22M12 22L17 17" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M7 7L12 2L17 7" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span class="text-sm text-[#7A7A7A]">Upward Path.</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <svg class="w-12 h-12 stroke-white mb-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 12H21M12 3V21M7 7L17 17M7 17L17 7" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span class="text-sm text-[#7A7A7A]">Integration Partner.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Counters Section -->
+        <section class="py-16">
+            <div class="container mx-auto px-8">
+                <div class="bg-white text-[#0D1B2A] p-8 sm:p-12 rounded-xl grid grid-cols-1 md:grid-cols-3 gap-8 text-center shadow-lg">
+                    <div class="flex flex-col items-center">
+                        <h2 class="text-4xl sm:text-5xl font-bold text-[#0D1B2A] mb-2">40,000+</h2>
+                        <p class="text-sm text-gray-600">Jobs Open in Finland.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h2 class="text-4xl sm:text-5xl font-bold text-[#0D1B2A] mb-2">100%</h2>
+                        <p class="text-sm text-gray-600">Compliance-Verified.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <h2 class="text-4xl sm:text-5xl font-bold text-[#0D1B2A] mb-2">0</h2>
+                        <p class="text-sm text-gray-600">Legal Risks for Companies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="py-16">
+            <div class="container mx-auto px-8">
+                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">How It Works</h2>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-8 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 flex items-center justify-center bg-[#00C896] text-[#0D1B2A] rounded-full text-2xl font-bold mb-4">1</div>
+                        <h3 class="text-lg font-bold mb-2">Register</h3>
+                        <p class="text-sm text-[#7A7A7A]">Create your account on the platform.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 flex items-center justify-center bg-[#00C896] text-[#0D1B2A] rounded-full text-2xl font-bold mb-4">2</div>
+                        <h3 class="text-lg font-bold mb-2">Verify Compliance</h3>
+                        <p class="text-sm text-[#7A7A7A]">Submit all necessary documentation.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 flex items-center justify-center bg-[#00C896] text-[#0D1B2A] rounded-full text-2xl font-bold mb-4">3</div>
+                        <h3 class="text-lg font-bold mb-2">Find/Post Tasks</h3>
+                        <p class="text-sm text-[#7A7A7A]">Browse or create opportunities.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 flex items-center justify-center bg-[#00C896] text-[#0D1B2A] rounded-full text-2xl font-bold mb-4">4</div>
+                        <h3 class="text-lg font-bold mb-2">Payment Secured</h3>
+                        <p class="text-sm text-[#7A7A7A]">Invoicing/forwarding via escrow.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 flex items-center justify-center bg-[#00C896] text-[#0D1B2A] rounded-full text-2xl font-bold mb-4">5</div>
+                        <h3 class="text-lg font-bold mb-2">Upskill & Grow</h3>
+                        <p class="text-sm text-[#7A7A7A]">Access educational resources.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logos Strip -->
+        <section class="py-8">
+            <div class="container mx-auto text-center px-8">
+                <p class="text-xs text-[#7A7A7A] mb-4">Built with Finland’s Workforce Leaders.</p>
+                <div class="flex flex-wrap items-center justify-center space-x-8 sm:space-x-12">
+                    <span class="text-2xl font-bold text-[#7A7A7A]">Wolt</span>
+                    <span class="text-2xl font-bold text-[#7A7A7A]">Posti</span>
+                    <span class="text-2xl font-bold text-[#7A7A7A]">Aalto</span>
+                    <span class="text-2xl font-bold text-[#7A7A7A]">Neste</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Primary CTA Banner -->
+        <section class="py-20 bg-gray-900 bg-opacity-40 backdrop-blur-sm">
+            <div class="container mx-auto text-center px-8">
+                <h2 class="text-4xl sm:text-5xl font-bold mb-6">Work. Verified.</h2>
+                <a href="#" class="bg-[#00C896] text-[#0D1B2A] px-8 py-4 rounded-lg font-bold text-lg hover:bg-white transition-colors">Join CodFleet Today</a>
+            </div>
+        </section>
+        
+         <!-- LLM Use Case Feature -->
+        <section class="py-16">
+            <div class="container mx-auto px-8">
+                <div class="bg-gray-900 bg-opacity-40 backdrop-blur-sm p-8 rounded-xl border border-gray-700">
+                    <h3 class="text-2xl font-bold mb-4 text-center">✨ Generate Your Use Case</h3>
+                    <p class="text-sm text-[#7A7A7A] mb-4 text-center">Describe a business or industry need, and we'll show you how CodFleet can help.</p>
+                    <textarea id="usecase-input" class="w-full h-24 p-4 rounded-lg bg-slate-900 border border-gray-700 text-white resize-none focus:outline-none focus:ring-2 focus:ring-[#00C896]" placeholder="e.g., 'We need to manage a temporary workforce for a construction project.'"></textarea>
+                    <button id="generate-button" class="bg-[#00C896] text-[#0D1B2A] px-6 py-3 rounded-lg font-bold hover:bg-white transition-colors mt-4 w-full">
+                        <span id="button-text">✨ Generate Use Case</span>
+                        <div id="loading-spinner" class="hidden h-6 w-6 border-4 border-t-4 border-gray-500 border-t-[#00C896] rounded-full animate-spin mx-auto"></div>
+                    </button>
+                    <div id="usecase-output" class="mt-6 p-4 rounded-lg bg-slate-900 border border-gray-700 text-sm text-[#7A7A7A] hidden"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Fixed Footer -->
+    <footer class="relative z-10 p-6 pb-12 text-[#7A7A7A]">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
+            <!-- Copyright -->
+            <span class="mb-2 sm:mb-0">© 2025 CodFleet.</span>
+            <!-- Links -->
+            <div class="flex flex-wrap justify-center space-x-4 sm:space-x-6">
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">AML/KYC Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Dispute Policy</a>
+                <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-white transition-colors">X</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Disclaimer -->
+    <div class="footer-disclaimer fixed bottom-0 left-0 w-full z-20 py-2 px-6 text-center text-xs text-[#7A7A7A] border-t border-gray-800">
+        Freelancers invoice clients directly via CodFleet. CodFleet provides compliance & invoicing; it does not employ or lease labour.
+    </div>
+
+    <script type="module">
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const usecaseInput = document.getElementById('usecase-input');
+            const generateButton = document.getElementById('generate-button');
+            const usecaseOutput = document.getElementById('usecase-output');
+            const buttonText = document.getElementById('button-text');
+            const loadingSpinner = document.getElementById('loading-spinner');
+
+            menuToggle.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.toggle('-translate-x-full');
+                if (isOpen) {
+                    mobileMenu.classList.remove('flex');
+                    hamburgerIcon.classList.remove('open');
+                } else {
+                    mobileMenu.classList.add('flex');
+                    hamburgerIcon.classList.add('open');
+                }
+            });
+
+            const geminiApiCall = async (prompt) => {
+                const userQuery = `As a professional consultant for a company named CodFleet, which connects skilled workers to tasks, please provide a brief use-case example based on the following industry need: "${prompt}". The response should be formal, corporate-grade, and focus on compliance and scalability.`;
+                const systemPrompt = "Act as a world-class workforce infrastructure consultant. Provide a concise, single-paragraph use-case summary of how a company can leverage a compliance-first, secure, and scalable workforce platform. The response should be professional, direct, and avoid any casual language.";
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                const maxRetries = 5;
+                let retries = 0;
+                let response;
+                while (retries < maxRetries) {
+                    try {
+                        response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                contents: [{
+                                    parts: [{
+                                        text: userQuery
+                                    }]
+                                }],
+                                tools: [{
+                                    "google_search": {}
+                                }],
+                                systemInstruction: {
+                                    parts: [{
+                                        text: systemPrompt
+                                    }]
+                                },
+                            }),
+                        });
+
+                        if (response.status === 429) {
+                            retries++;
+                            await new Promise(res => setTimeout(res, 2 ** retries * 1000));
+                            continue;
+                        }
+
+                        if (!response.ok) {
+                            console.error(`API Error: ${response.status} ${response.statusText}`);
+                            usecaseOutput.textContent = 'Sorry, something went wrong. Please try again later.';
+                            usecaseOutput.classList.remove('hidden');
+                            return;
+                        }
+                        break;
+                    } catch (error) {
+                        console.error('Fetch Error:', error);
+                        usecaseOutput.textContent = 'Sorry, something went wrong. Please check your network connection.';
+                        usecaseOutput.classList.remove('hidden');
+                        return;
+                    }
+                }
+
+                const result = await response.json();
+                const candidate = result.candidates?.[0];
+
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    let text = candidate.content.parts[0].text;
+                    const groundingMetadata = candidate.groundingMetadata;
+                    if (groundingMetadata && groundingMetadata.groundingAttributions) {
+                        const sources = groundingMetadata.groundingAttributions
+                            .map(attribution => ({
+                                uri: attribution.web?.uri,
+                                title: attribution.web?.title,
+                            }))
+                            .filter(source => source.uri && source.title);
+
+                        if (sources.length > 0) {
+                            text += '\n\nSources:';
+                            sources.forEach((source, index) => {
+                                text += `\n[${index + 1}] ${source.title} (${source.uri})`;
+                            });
+                        }
+                    }
+                    usecaseOutput.textContent = text;
+                } else {
+                    usecaseOutput.textContent = 'Could not generate a use case. Please try again.';
+                }
+                usecaseOutput.classList.remove('hidden');
+            };
+
+            generateButton.addEventListener('click', async () => {
+                const prompt = usecaseInput.value.trim();
+                if (prompt === '') {
+                    usecaseInput.placeholder = 'Please enter a description...';
+                    return;
+                }
+
+                buttonText.classList.add('hidden');
+                loadingSpinner.classList.remove('hidden');
+                generateButton.disabled = true;
+
+                await geminiApiCall(prompt);
+
+                buttonText.classList.remove('hidden');
+                loadingSpinner.classList.add('hidden');
+                generateButton.disabled = false;
+            });
+        });
+    </script>
+</body>
+
+</html>
