@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The CodFleet Story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #0D1B2A;
+        }
+
+        /* Custom SVG styling for icons and illustrations */
+        .svg-icon path,
+        .svg-icon line,
+        .svg-icon circle,
+        .svg-icon rect,
+        .svg-illustration path,
+        .svg-illustration line,
+        .svg-illustration circle,
+        .svg-illustration rect {
+            stroke: #FFFFFF;
+            stroke-width: 1.5px;
+            fill: none;
+            transition: stroke 0.3s ease-in-out;
+        }
+
+        .svg-icon.accent path,
+        .svg-icon.accent line,
+        .svg-icon.accent circle,
+        .svg-icon.accent rect {
+            stroke: #00C896;
+        }
+
+        /* Mobile menu animation */
+        .hamburger-menu-icon {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hamburger-menu-icon.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger-menu-icon.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu-icon.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .footer-disclaimer {
+            background-color: #0D1B2A;
+        }
+    </style>
+</head>
+
+<body class="bg-[#0D1B2A] text-white overflow-x-hidden">
+
+    <!-- Fixed Header -->
+    <header class="fixed top-0 left-0 w-full z-50 p-6">
+        <nav class="container mx-auto flex justify-between items-center">
+            <!-- Left: Logo & Tagline -->
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-xl font-bold">CodFleet</a>
+                <span class="text-xs text-[#7A7A7A] hidden lg:block">Designing Futures.</span>
+            </div>
+
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="menu-toggle" class="lg:hidden p-2 focus:outline-none">
+                <div id="hamburger-icon" class="flex flex-col space-y-1.5 hamburger-menu-icon">
+                    <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+                </div>
+            </button>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="#" class="hover:text-[#7A7A7A] transition-colors">Home</a>
+                <a href="#" class="text-[#00C896] font-bold">The CodFleet Story</a>
+                <a href="#" class="hover:text-[#7A7A7A] transition-colors">Network</a>
+                <a href="#" class="hover:text-[#7A7A7A] transition-colors">Insights</a>
+                <a href="#" class="hover:text-[#7A7A7A] transition-colors">Let’s Talk</a>
+                <a href="#" class="hover:text-[#7A7A7A] transition-colors">Investors</a>
+                <a href="#" class="bg-[#00C896] text-[#0D1B2A] px-6 py-3 rounded-lg font-bold hover:bg-white transition-colors">Ready!</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="fixed top-0 left-0 h-full w-full bg-[#0D1B2A] transform -translate-x-full transition-transform duration-300 z-40 lg:hidden flex flex-col items-center justify-center space-y-8">
+        <a href="#" class="text-3xl hover:text-[#7A7A7A] transition-colors">Home</a>
+        <a href="#" class="text-3xl hover:text-[#7A7A7A] transition-colors">The CodFleet Story</a>
+        <a href="#" class="text-3xl hover:text-[#7A7A7A] transition-colors">Network</a>
+        <a href="#" class="text-3xl hover:text-[#7A7A7A] transition-colors">Insights</a>
+        <a href="#" class="text-3xl hover:text-[#7A7A7A] transition-colors">Let’s Talk</a>
+        <a href="#" class="text-3xl hover:text-[#7A7A7A] transition-colors">Investors</a>
+        <a href="#" class="bg-[#00C896] text-[#0D1B2A] text-3xl px-8 py-4 rounded-lg font-bold hover:bg-white transition-colors mt-8">Ready!</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="relative z-10 pt-24 pb-12">
+
+        <!-- Our Story Section -->
+        <section class="py-16 container mx-auto px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="lg:order-1 order-2">
+                    <h1 class="text-4xl sm:text-5xl font-bold mb-6">Our Story</h1>
+                    <p class="text-lg text-[#7A7A7A] mb-4">
+                        The gig economy is broken. We have seen firsthand the chaotic gig economy where freelancers (independent businesses) face unstable income and companies are exposed to legal risks. This reality is especially acute for new immigrants and non-EU citizens navigating complex Finnish compliance requirements.
+                    </p>
+                    <ul class="list-disc list-inside text-lg text-[#7A7A7A] space-y-2">
+                        <li>The current system leads to fragmented tasks and a lack of career pathways.</li>
+                        <li>Freelancers are often trapped in low-income cycles, without a clear path for professional growth.</li>
+                        <li>Companies struggle with complex compliance and administrative burdens.</li>
+                    </ul>
+                    <p class="text-lg text-[#7A7A7A] mt-4">
+                        CodFleet was founded to build a compliance-first bridge. We are a compliance + invoicing hub that provides a professional backbone for Finland's gig economy. We are here to transform tasks/opportunities into sustainable careers.
+                    </p>
+                </div>
+                <div class="lg:order-2 order-1 flex justify-center items-center">
+                    <!-- Illustration: Chaotic gig riders -> CodFleet shield -> professionals -->
+                    <svg class="svg-illustration w-full max-w-sm h-auto lg:max-w-lg" viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Chaotic Riders (left) -->
+                        <circle cx="50" cy="250" r="10" stroke="#7A7A7A" />
+                        <line x1="50" y1="260" x2="50" y2="280" stroke="#7A7A7A" />
+                        <line x1="40" y1="270" x2="60" y2="270" stroke="#7A7A7A" />
+                        <rect x="25" y="240" width="15" height="15" rx="3" stroke="#7A7A7A" />
+                        <path d="M 30 245 L 35 245" stroke="#7A7A7A" />
+
+                        <!-- Path to shield -->
+                        <path d="M 70 260 C 120 180, 180 180, 230 250" stroke="#7A7A7A" />
+
+                        <!-- CodFleet Compliance Shield -->
+                        <path d="M 250 50 L 220 120 L 250 190 L 280 120 Z" stroke="#00C896" fill="#00C896" fill-opacity="0.1" />
+                        <circle cx="250" cy="120" r="10" stroke="#00C896" />
+                        <line x1="250" y1="110" x2="250" y2="130" stroke="#00C896" />
+                        <line x1="240" y1="120" x2="260" y2="120" stroke="#00C896" />
+                        <path d="M 250 120 L 235 150 L 265 150 Z" stroke="#00C896" />
+
+                        <!-- Path from shield -->
+                        <path d="M 270 190 C 320 280, 380 280, 430 250" stroke="#00C896" />
+
+                        <!-- Professionals (right) -->
+                        <rect x="420" y="240" width="25" height="30" rx="4" stroke="#FFFFFF" />
+                        <circle cx="432.5" cy="230" r="10" stroke="#FFFFFF" />
+                        <path d="M 425 250 L 440 250" stroke="#FFFFFF" />
+
+                        <rect x="450" y="250" width="25" height="25" rx="4" stroke="#FFFFFF" />
+                        <path d="M 455 255 L 470 255" stroke="#FFFFFF" />
+                        <circle cx="462.5" cy="240" r="8" stroke="#FFFFFF" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Vision Section -->
+        <section class="py-24 bg-gradient-to-r from-[#0D1B2A] to-[#0d1b2a99] relative">
+            <div class="absolute inset-0 bg-green-500 opacity-5 z-0"></div>
+            <div class="container mx-auto px-8 relative z-10 text-center">
+                <p class="text-3xl sm:text-4xl font-bold max-w-3xl mx-auto leading-snug">
+                    To be Finland’s trusted workforce engine — one that governments trust, companies depend on, and freelancers believe in.
+                </p>
+            </div>
+        </section>
+
+        <!-- Our Mission Section -->
+        <section class="py-16 container mx-auto px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Our Mission</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white text-[#0D1B2A] p-6 rounded-lg text-center shadow-lg">
+                    <svg class="svg-icon accent w-12 h-12 mx-auto mb-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 11L12 14L22 4" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M2 11V14C2 17.7712 2 19.6569 3.17157 20.8284C4.34315 22 6.22876 22 10 22H14C17.7712 22 19.6569 22 20.8284 20.8284C22 19.6569 22 17.7712 22 14V11" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p class="text-sm font-bold text-gray-600">Provide a seamless, compliance-verified platform for freelancers (independent businesses) to manage their professional life.</p>
+                </div>
+                <div class="bg-white text-[#0D1B2A] p-6 rounded-lg text-center shadow-lg">
+                    <svg class="svg-icon accent w-12 h-12 mx-auto mb-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2V22M7 17L12 22M12 22L17 17" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M7 7L12 2L17 7" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p class="text-sm font-bold text-gray-600">Empower freelancers with tools to grow from tasks to careers, including upskilling resources.</p>
+                </div>
+                <div class="bg-white text-[#0D1B2A] p-6 rounded-lg text-center shadow-lg">
+                    <svg class="svg-icon accent w-12 h-12 mx-auto mb-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 21H3V11C3 9.89543 3.89543 9 5 9H19C20.1046 9 21 9.89543 21 11V21Z" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <rect x="7" y="5" width="10" height="4" rx="2" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12 21V9" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p class="text-sm font-bold text-gray-600">Enable companies to access a verified workforce, simplifying talent acquisition and minimizing legal exposure.</p>
+                </div>
+                <div class="bg-white text-[#0D1B2A] p-6 rounded-lg text-center shadow-lg">
+                    <svg class="svg-icon accent w-12 h-12 mx-auto mb-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21Z" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M3 13H21" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M12 3V21" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <p class="text-sm font-bold text-gray-600">Serve as a government-trusted partner in building a future-proof, robust, and ethical workforce in Finland.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Timeline Section -->
+        <section class="py-16 container mx-auto px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Our Timeline</h2>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-start relative before:hidden md:before:block before:absolute before:left-0 before:top-1/2 before:w-full before:h-px before:bg-gray-700">
+                <div class="flex flex-col items-center text-center relative md:pt-8 md:pb-8">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white text-[#0D1B2A] rounded-full mb-4">
+                        <svg class="svg-icon w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <p class="font-bold text-lg mb-1">2025</p>
+                    <p class="text-sm text-[#7A7A7A]">Foundation.</p>
+                </div>
+                <div class="flex flex-col items-center text-center relative md:pt-8 md:pb-8">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white text-[#0D1B2A] rounded-full mb-4">
+                        <svg class="svg-icon w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2V22M7 17L12 22M12 22L17 17" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M7 7L12 2L17 7" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <p class="font-bold text-lg mb-1">0–3 months</p>
+                    <p class="text-sm text-[#7A7A7A]">Legal groundwork.</p>
+                </div>
+                <div class="flex flex-col items-center text-center relative md:pt-8 md:pb-8">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white text-[#0D1B2A] rounded-full mb-4">
+                        <svg class="svg-icon w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 10C21 17 12 22 12 22C12 22 3 17 3 10C3 4.47715 7.47715 0 13 0C18.5228 0 23 4.47715 23 10Z" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="12" cy="10" r="3" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <p class="font-bold text-lg mb-1">4–6 months</p>
+                    <p class="text-sm text-[#7A7A7A]">Pilot in Helsinki.</p>
+                </div>
+                <div class="flex flex-col items-center text-center relative md:pt-8 md:pb-8">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white text-[#0D1B2A] rounded-full mb-4">
+                        <svg class="svg-icon w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="10" width="18" height="12" rx="2" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M7 10V6C7 4.89543 7.89543 4 9 4H15C16.1046 4 17 4.89543 17 6V10" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 10V18" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <p class="font-bold text-lg mb-1">6–12 months</p>
+                    <p class="text-sm text-[#7A7A7A]">Expansion & Upskilling.</p>
+                </div>
+                <div class="flex flex-col items-center text-center relative md:pt-8 md:pb-8">
+                    <div class="w-16 h-16 flex items-center justify-center bg-white text-[#0D1B2A] rounded-full mb-4">
+                        <svg class="svg-icon w-8 h-8" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 17V22" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M22 7L12 12" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 12L2 7" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <p class="font-bold text-lg mb-1">2026</p>
+                    <p class="text-sm text-[#7A7A7A]">Become Finland’s leading compliance-first workforce network.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Section -->
+        <section class="py-16 container mx-auto px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Leadership</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                <div class="bg-white text-[#0D1B2A] p-6 rounded-lg shadow-lg">
+                    <img src="https://placehold.co/150x150/00C896/FFFFFF?text=Yash+P" alt="Yash Panchal" class="rounded-full mx-auto mb-4" />
+                    <h3 class="font-bold text-xl mb-2">Yash Panchal</h3>
+                    <p class="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="bg-white text-[#0D1B2A] p-6 rounded-lg shadow-lg">
+                    <svg class="svg-icon w-32 h-32 mx-auto mb-4" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="40" stroke="#00C896" stroke-width="3" />
+                        <path d="M50 10 C 60 20, 70 30, 80 40 L 80 60 C 70 70, 60 80, 50 90 L 50 10" stroke="#00C896" stroke-width="3" />
+                        <path d="M20 40 L 80 40 M20 60 L 80 60" stroke="#00C896" stroke-width="3" />
+                    </svg>
+                    <h3 class="font-bold text-xl mb-2">Kaizen</h3>
+                    <p class="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="bg-white text-[#0D1B2A] p-6 rounded-lg shadow-lg">
+                    <svg class="svg-icon w-32 h-32 mx-auto mb-4" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="40" stroke="#00C896" stroke-width="3" />
+                        <path d="M50 10 L 50 90 M20 30 L 80 30 M20 70 L 80 70 M30 20 L 70 80" stroke="#00C896" stroke-width="3" />
+                        <path d="M30 80 L 70 20" stroke="#00C896" stroke-width="3" />
+                    </svg>
+                    <h3 class="font-bold text-xl mb-2">Lumen</h3>
+                    <p class="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="bg-white text-[#0D1B2A] p-6 rounded-lg shadow-lg">
+                    <img src="https://placehold.co/150x150/00C896/FFFFFF?text=Krushnal+P" alt="Krushnal Patli" class="rounded-full mx-auto mb-4" />
+                    <h3 class="font-bold text-xl mb-2">Krushnal Patli</h3>
+                    <p class="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="bg-white text-[#0D1B2A] p-6 rounded-lg shadow-lg">
+                    <img src="https://placehold.co/150x150/00C896/FFFFFF?text=Kishan+P" alt="Kishan Patel" class="rounded-full mx-auto mb-4" />
+                    <h3 class="font-bold text-xl mb-2">Kishan Patel</h3>
+                    <p class="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="bg-white text-[#0D1B2A] p-6 rounded-lg shadow-lg">
+                    <img src="https://placehold.co/150x150/00C896/FFFFFF?text=Krishna+G" alt="Krishna Gurjar" class="rounded-full mx-auto mb-4" />
+                    <h3 class="font-bold text-xl mb-2">Krishna Gurjar</h3>
+                    <p class="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="py-16 container mx-auto px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Impact & Projections for 1st Year</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+                <div class="bg-gray-900 bg-opacity-40 backdrop-blur-sm p-8 rounded-xl border border-gray-700">
+                    <div class="flex items-center justify-center mb-4">
+                        <svg class="svg-icon w-12 h-12 accent" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 17V22" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M22 7L12 12" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 12L2 7" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span class="text-4xl sm:text-5xl font-bold text-white ml-4">1,000+</span>
+                    </div>
+                    <p class="text-sm text-[#7A7A7A]">freelancers projected in first year.</p>
+                </div>
+                <div class="bg-gray-900 bg-opacity-40 backdrop-blur-sm p-8 rounded-xl border border-gray-700">
+                    <div class="flex items-center justify-center mb-4">
+                        <svg class="svg-icon w-12 h-12 accent" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 17V22" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M22 7L12 12" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 12L2 7" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span class="text-4xl sm:text-5xl font-bold text-white ml-4">€79,000+</span>
+                    </div>
+                    <p class="text-sm text-[#7A7A7A]">monthly profit potential.</p>
+                </div>
+                <div class="bg-gray-900 bg-opacity-40 backdrop-blur-sm p-8 rounded-xl border border-gray-700">
+                    <div class="flex items-center justify-center mb-4">
+                        <svg class="svg-icon w-12 h-12 accent" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 17V22" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M22 7L12 12" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 12L2 7" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span class="text-4xl sm:text-5xl font-bold text-white ml-4">First</span>
+                    </div>
+                    <p class="text-sm text-[#7A7A7A]">compliance-first model in Finland.</p>
+                </div>
+                <div class="bg-gray-900 bg-opacity-40 backdrop-blur-sm p-8 rounded-xl border border-gray-700">
+                    <div class="flex items-center justify-center mb-4">
+                        <svg class="svg-icon w-12 h-12 accent" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 17V22" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M22 7L12 12" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 12L2 7" stroke="#00C896" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span class="text-4xl sm:text-5xl font-bold text-white ml-4">Upskilling</span>
+                    </div>
+                    <p class="text-sm text-[#7A7A7A]">bridge launched.</p>
+                </div>
+            </div>
+            <p class="text-center text-sm text-[#7A7A7A] mt-8">✨ CodFleet isn’t just a start-up. It’s a movement.</p>
+        </section>
+    </main>
+
+    <!-- Fixed Footer -->
+    <footer class="relative z-10 p-6 pb-12 text-[#7A7A7A]">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
+            <!-- Copyright -->
+            <span class="mb-2 sm:mb-0">© 2025 CodFleet.</span>
+            <!-- Links -->
+            <div class="flex flex-wrap justify-center space-x-4 sm:space-x-6">
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">AML/KYC Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Dispute Policy</a>
+                <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-white transition-colors">X</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Disclaimer -->
+    <div class="footer-disclaimer fixed bottom-0 left-0 w-full z-20 py-2 px-6 text-center text-xs text-[#7A7A7A] border-t border-gray-800">
+        Freelancers invoice clients directly via CodFleet. CodFleet provides compliance & invoicing; it does not employ or lease labour.
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+
+            menuToggle.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.toggle('-translate-x-full');
+                if (isOpen) {
+                    mobileMenu.classList.remove('flex');
+                    hamburgerIcon.classList.remove('open');
+                } else {
+                    mobileMenu.classList.add('flex');
+                    hamburgerIcon.classList.add('open');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
