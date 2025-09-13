@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the CodFleet Network</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #0D1B2A;
+        }
+
+        /* Custom SVG styling for icons and illustrations */
+        .svg-icon path,
+        .svg-icon line,
+        .svg-icon circle,
+        .svg-icon rect,
+        .svg-illustration path,
+        .svg-illustration line,
+        .svg-illustration circle,
+        .svg-illustration rect {
+            stroke: #FFFFFF;
+            stroke-width: 1.5px;
+            fill: none;
+            transition: stroke 0.3s ease-in-out, fill 0.3s ease-in-out;
+        }
+
+        .svg-icon.accent path,
+        .svg-icon.accent line,
+        .svg-icon.accent circle,
+        .svg-icon.accent rect {
+            stroke: #00C896;
+        }
+
+        .svg-illustration .accent-fill {
+            fill: #00C896;
+            fill-opacity: 0.1;
+        }
+
+        /* Mobile menu animation */
+        .hamburger-menu-icon {
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hamburger-menu-icon.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger-menu-icon.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu-icon.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .footer-disclaimer {
+            background-color: #0D1B2A;
+        }
+    </style>
+</head>
+
+<body class="bg-[#0D1B2A] text-white overflow-x-hidden font-mono">
+
+    <!-- Fixed Header -->
+    <header class="fixed top-0 left-0 w-full z-50 p-6">
+        <nav class="container mx-auto flex justify-between items-center">
+            <!-- Left: Logo & Tagline -->
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-xl font-bold">CodFleet</a>
+                <span class="text-xs text-[#7A7A7A] hidden lg:block">Designing Futures.</span>
+            </div>
+
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="menu-toggle" class="lg:hidden p-2 focus:outline-none">
+                <div id="hamburger-icon" class="flex flex-col space-y-1.5 hamburger-menu-icon">
+                    <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+                    <span class="block w-6 h-0.5 bg-white transition-all duration-300"></span>
+                </div>
+            </button>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="#" class="hover:text-[#7A7A7A] transition-colors">Home</a>
+                <a href="#" class="hover:text-[#7A7A7A] transition-colors">The CodFleet Story</a>
+                <a href="#" class="text-[#00C896] font-bold">Network</a>
+                <a href="#" class="hover:text-[#7A7A7A] transition-colors">Insights</a>
+                <a href="#" class="hover:text-[#7A7A7A] transition-colors">Let’s Talk</a>
+                <a href="#" class="hover:text-[#7A7A7A] transition-colors">Investors</a>
+                <a href="#" class="bg-[#00C896] text-[#0D1B2A] px-6 py-3 rounded-lg font-bold hover:bg-white transition-colors">Ready!</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="fixed top-0 left-0 h-full w-full bg-[#0D1B2A] transform -translate-x-full transition-transform duration-300 z-40 lg:hidden flex flex-col items-center justify-center space-y-8">
+        <a href="#" class="text-3xl hover:text-[#7A7A7A] transition-colors">Home</a>
+        <a href="#" class="text-3xl hover:text-[#7A7A7A] transition-colors">The CodFleet Story</a>
+        <a href="#" class="text-3xl hover:text-[#7A7A7A] transition-colors">Network</a>
+        <a href="#" class="text-3xl hover:text-[#7A7A7A] transition-colors">Insights</a>
+        <a href="#" class="text-3xl hover:text-[#7A7A7A] transition-colors">Let’s Talk</a>
+        <a href="#" class="text-3xl hover:text-[#7A7A7A] transition-colors">Investors</a>
+        <a href="#" class="bg-[#00C896] text-[#0D1B2A] text-3xl px-8 py-4 rounded-lg font-bold hover:bg-white transition-colors mt-8">Ready!</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="relative z-10 pt-24 pb-12">
+        <!-- Hero Section -->
+        <section class="container mx-auto px-8 py-16 text-center">
+            <h1 class="text-4xl sm:text-5xl font-bold mb-4">Join the CodFleet Network.</h1>
+            <p class="text-lg text-[#7A7A7A] max-w-2xl mx-auto">
+                Three paths. One compliance-secure workforce.
+            </p>
+        </section>
+
+        <!-- Three Cards Section -->
+        <section class="container mx-auto px-8 pb-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-8">
+
+                <!-- Freelancer Card -->
+                <div class="bg-gray-900 bg-opacity-40 backdrop-blur-sm p-8 rounded-xl border border-gray-700 flex flex-col items-center text-center">
+                    <h2 class="text-2xl font-bold mb-4">Freelancer</h2>
+                    <svg class="svg-illustration w-32 h-32 mb-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="30" r="15" stroke="#FFFFFF" />
+                        <path d="M70 60 C 70 75, 60 90, 50 90 C 40 90, 30 75, 30 60 L 30 50 C 30 40, 40 30, 50 30 C 60 30, 70 40, 70 50 Z" stroke="#FFFFFF" />
+                        <path d="M50 80 L 50 90" stroke="#FFFFFF" />
+                        <rect x="25" y="60" width="50" height="20" rx="5" stroke="#FFFFFF" />
+                        <path d="M35 70 L 65 70 M35 75 L 65 75" stroke="#FFFFFF" />
+                        <path d="M60 55 L 65 60 L 70 55" stroke="#00C896" />
+                        <circle cx="65" cy="55" r="5" stroke="#00C896" />
+                        <path d="M65 55 L 75 55 M65 55 L 65 65" stroke="#00C896" />
+                        <path d="M50 30 L 50 20 L 40 20 M50 20 L 60 20" stroke="#FFFFFF" />
+                        <path d="M60 20 C 60 10, 50 10, 50 20 L 40 20" stroke="#FFFFFF" />
+                        <circle cx="50" cy="50" r="25" stroke="#00C896" class="accent-fill" />
+                    </svg>
+                    <p class="text-sm text-[#7A7A7A] mb-6">
+                        Join CodFleet’s compliance-secure network and unlock real opportunities. Work legally, grow your career, and access projects that match your skills.
+                    </p>
+                    <a href="#" class="bg-[#00C896] text-[#0D1B2A] px-10 py-5 rounded-lg font-bold hover:bg-white transition-colors w-full font-mono">Join the Fleet</a>
+                </div>
+
+                <!-- Company Card -->
+                <div class="bg-gray-900 bg-opacity-40 backdrop-blur-sm p-8 rounded-xl border border-gray-700 flex flex-col items-center text-center">
+                    <h2 class="text-2xl font-bold mb-4">Company</h2>
+                    <svg class="svg-illustration w-32 h-32 mb-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="25" cy="30" r="10" stroke="#FFFFFF" />
+                        <path d="M30 45 C 30 55, 20 60, 20 60 L 20 50 C 20 40, 30 30, 40 30 C 50 30, 60 40, 60 50 Z" stroke="#FFFFFF" />
+                        <circle cx="75" cy="30" r="10" stroke="#FFFFFF" />
+                        <path d="M80 45 C 80 55, 70 60, 70 60 L 70 50 C 70 40, 80 30, 90 30 C 100 30, 110 40, 110 50 Z" stroke="#FFFFFF" />
+                        <path d="M30 50 L 70 50" stroke="#FFFFFF" />
+                        <path d="M50 80 L 50 90" stroke="#00C896" />
+                        <path d="M50 10 L 50 90" stroke="#00C896" />
+                        <path d="M40 20 L 60 20 M40 80 L 60 80" stroke="#00C896" />
+                        <circle cx="50" cy="50" r="25" stroke="#00C896" class="accent-fill" />
+                        <path d="M40 60 L 60 60" stroke="#00C896" />
+                        <path d="M40 70 L 60 70" stroke="#00C896" />
+                        <path d="M40 60 L 40 70 M60 60 L 60 70" stroke="#00C896" />
+                    </svg>
+                    <p class="text-sm text-[#7A7A7A] mb-6">
+                        Tap into a verified pool of skilled professionals. Build your workforce with confidence — every freelancer is compliance-checked, insured, and ready to deliver.
+                    </p>
+                    <a href="#" class="text-white border-white border px-10 py-5 rounded-lg font-bold hover:bg-white hover:text-[#0D1B2A] transition-colors w-full font-mono">Accelerate Your Workforce</a>
+                </div>
+
+                <!-- Education Partner Card -->
+                <div class="bg-gray-900 bg-opacity-40 backdrop-blur-sm p-8 rounded-xl border border-gray-700 flex flex-col items-center text-center">
+                    <h2 class="text-2xl font-bold mb-4">Education Partner</h2>
+                    <svg class="svg-illustration w-32 h-32 mb-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 80 L 90 80 L 90 70 L 10 70 Z" stroke="#FFFFFF" />
+                        <path d="M15 70 L 25 20 L 35 70" stroke="#FFFFFF" />
+                        <path d="M65 70 L 75 20 L 85 70" stroke="#FFFFFF" />
+                        <path d="M50 70 L 50 20" stroke="#FFFFFF" />
+                        <path d="M15 70 L 50 50 L 85 70" stroke="#00C896" />
+                        <path d="M50 50 L 50 10" stroke="#00C896" />
+                        <path d="M10 80 L 50 60 L 90 80 Z" stroke="#00C896" class="accent-fill" />
+                        <path d="M10 80 L 50 60 L 90 80" stroke="#00C896" />
+                        <path d="M50 60 L 50 10" stroke="#00C896" />
+                        <path d="M10 80 L 90 80" stroke="#00C896" />
+                        <circle cx="50" cy="50" r="25" stroke="#00C896" class="accent-fill" />
+                        <path d="M35 50 L 65 50 M35 60 L 65 60" stroke="#00C896" />
+                    </svg>
+                    <p class="text-sm text-[#7A7A7A] mb-6">
+                        Partner with CodFleet to connect your students with real industry projects. Bridge the gap between learning and careers with compliance-secure pathways.
+                    </p>
+                    <a href="#" class="text-[#00C896] border-[#00C896] border px-10 py-5 rounded-lg font-bold hover:bg-[#00C896] hover:text-[#0D1B2A] transition-colors w-full font-mono">Upskill the Fleet</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Fixed Footer -->
+    <footer class="relative z-10 p-6 pb-12 text-[#7A7A7A]">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
+            <!-- Copyright -->
+            <span class="mb-2 sm:mb-0">© 2025 CodFleet.</span>
+            <!-- Links -->
+            <div class="flex flex-wrap justify-center space-x-4 sm:space-x-6">
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">AML/KYC Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Dispute Policy</a>
+                <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-white transition-colors">X</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Disclaimer -->
+    <div class="footer-disclaimer fixed bottom-0 left-0 w-full z-20 py-2 px-6 text-center text-xs text-[#7A7A7A] border-t border-gray-800">
+        Freelancers invoice clients directly via CodFleet. CodFleet provides compliance & invoicing; it does not employ or lease labour.
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+
+            menuToggle.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.toggle('-translate-x-full');
+                if (isOpen) {
+                    mobileMenu.classList.remove('flex');
+                    hamburgerIcon.classList.remove('open');
+                } else {
+                    mobileMenu.classList.add('flex');
+                    hamburgerIcon.classList.add('open');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
